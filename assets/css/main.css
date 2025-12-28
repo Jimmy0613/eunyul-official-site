@@ -1,0 +1,433 @@
+/**
+* Template Name: Active
+* Template URL: https://bootstrapmade.com/active-bootstrap-website-template/
+* Updated: Aug 07 2024 with Bootstrap v5.3.3
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
+
+/*--------------------------------------------------------------
+# About Section
+--------------------------------------------------------------*/
+.about .btn-get-started {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  border-radius: 30px;
+  padding: 8px 30px;
+  border: 2px solid transparent;
+  transition: 0.3s all ease-in-out;
+  font-size: 14px;
+}
+
+.about .btn-get-started:hover {
+  border-color: var(--accent-color);
+  background-color: transparent;
+  color: var(--accent-color);
+}
+
+.about h1 {
+  color: var(--heading-color);
+  font-size: 30px;
+}
+
+.about p {
+  line-height: 1.7;
+  color: var(--default-color);
+}
+
+.about .swiper-pagination {
+  position: absolute;
+  bottom: 30px;
+}
+
+.about .swiper-pagination .swiper-pagination-bullet {
+  margin: 0 5px;
+  background: #ffffff;
+  opacity: 0.3;
+}
+
+.about .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background: var(--accent-color);
+  opacity: 1;
+}
+
+.about .section-subtitle {
+  font-size: 15px;
+  margin-bottom: 10px;
+  display: block;
+  color: var(--default-color);
+}
+
+.about-custom-height {
+  min-height: 400px; /* 최소 높이 설정 */
+  height: 445px;     /* 목표 높이 */
+  padding-top: 20px !important;    /* 위쪽 여백 축소 */
+  padding-bottom: 20px !important; /* 아래쪽 여백 축소 */
+  display: flex;
+  align-items: center; /* 내부 콘텐츠를 세로 중앙 정렬 */
+  overflow: hidden;    /* 혹시 내용이 넘치면 잘라냄 */
+}
+
+/* 이미지 크기 조절 (높이가 줄어들었으므로 이미지도 작아져야 함) */
+.about-custom-height .swiper-slide img {
+  max-height: 350px; /* 섹션 높이보다 약간 작게 설정 */
+  width: auto;       /* 비율 유지 */
+  margin: 0 auto;    /* 중앙 정렬 */
+}
+
+/*이미지 가운데 정렬*/
+.about .swiper-slide {
+  display: flex;            /* Flexbox 활성화 */
+  justify-content: center;  /* 가로 중앙 정렬 */
+  align-items: center;      /* 세로 중앙 정렬 */
+  height: 445px;            /* 아까 설정한 섹션 높이에 맞추거나 필요에 따라 조정 */
+}
+
+.about .swiper-slide img {
+  max-width: 100%;          /* 슬라이드 너비 방지 */
+  max-height: 90%;         /* 슬라이드 높이 방지 */
+  object-fit: contain;      /* 이미지 비율 유지하며 영역 내 꽉 채움 */
+}
+
+@media (max-width: 992px) {
+  .about-custom-height {
+    height: auto; /* 모바일에서는 내용에 맞게 높이가 늘어나도록 함 */
+    min-height: 400px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Services Section
+--------------------------------------------------------------*/
+.services {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.services .services-item .services-icon {
+  color: var(--accent-color);
+  margin-bottom: 20px;
+}
+
+.services .services-item .services-icon i {
+  font-size: 48px;
+}
+
+.services .services-item h3 {
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--heading-color);
+}
+
+/*--------------------------------------------------------------
+# Contact Section
+--------------------------------------------------------------*/
+.contact .info {
+  background-color: var(--surface-color);
+  padding: 40px;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.contact .info h3 {
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.contact .info p {
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+  margin-bottom: 30px;
+  font-size: 15px;
+}
+
+.contact .info-item+.info-item {
+  padding-top: 20px;
+  margin-top: 20px;
+  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+}
+
+.contact .info-item i {
+  font-size: 24px;
+  color: var(--accent-color);
+  transition: all 0.3s ease-in-out;
+  margin-right: 20px;
+}
+
+.contact .info-item h4 {
+  padding: 0;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.contact .info-item p {
+  padding: 0;
+  margin-bottom: 0;
+  font-size: 14px;
+  color: color-mix(in srgb, var(--default-color), transparent 40%);
+}
+
+.contact .php-email-form {
+  width: 100%;
+}
+
+.contact .php-email-form .form-group {
+  padding-bottom: 8px;
+}
+
+.contact .php-email-form input[type=text],
+.contact .php-email-form input[type=email],
+.contact .php-email-form textarea {
+  color: var(--default-color);
+  background-color: var(--surface-color);
+  border-radius: 0px;
+  box-shadow: none;
+  font-size: 14px;
+  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
+}
+
+.contact .php-email-form input[type=text]:focus,
+.contact .php-email-form input[type=email]:focus,
+.contact .php-email-form textarea:focus {
+  border-color: var(--accent-color);
+}
+
+.contact .php-email-form input[type=text]::placeholder,
+.contact .php-email-form input[type=email]::placeholder,
+.contact .php-email-form textarea::placeholder {
+  color: color-mix(in srgb, var(--default-color), transparent 70%);
+}
+
+.contact .php-email-form input[type=text],
+.contact .php-email-form input[type=email] {
+  height: 48px;
+  padding: 10px 15px;
+}
+
+.contact .php-email-form textarea {
+  padding: 10px 12px;
+  height: 290px;
+}
+
+.contact .php-email-form button[type=submit] {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+  border: 0;
+  padding: 13px 50px;
+  transition: 0.4s;
+  border-radius: 4px;
+}
+
+.contact .php-email-form button[type=submit]:hover {
+  background: color-mix(in srgb, var(--accent-color) 90%, black 15%);
+}
+
+/*--------------------------------------------------------------
+# Widgets
+--------------------------------------------------------------*/
+.widgets-container {
+  margin: 60px 0 30px 0;
+}
+
+.widget-title {
+  color: var(--heading-color);
+  font-size: 20px;
+  font-weight: 600;
+  padding: 0 0 0 10px;
+  margin: 0 0 20px 0;
+  border-left: 4px solid var(--accent-color);
+}
+
+.widget-item {
+  margin-bottom: 30px;
+  background-color: color-mix(in srgb, var(--default-color), transparent 98%);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
+  padding: 30px;
+  border-radius: 5px;
+}
+
+.widget-item:last-child {
+  margin-bottom: 0;
+}
+
+.blog-author-widget img {
+  max-width: 160px;
+}
+
+.blog-author-widget h4 {
+  font-weight: 600;
+  font-size: 24px;
+  margin: 15px 0 0 0;
+  padding: 0;
+  color: color-mix(in srgb, var(--default-color), transparent 20%);
+}
+
+.blog-author-widget .social-links {
+  margin: 5px 0;
+}
+
+.blog-author-widget .social-links a {
+  color: color-mix(in srgb, var(--default-color), transparent 60%);
+  margin: 0 3px;
+  font-size: 18px;
+}
+
+.blog-author-widget .social-links a:hover {
+  color: var(--accent-color);
+}
+
+.blog-author-widget p {
+  font-style: italic;
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  margin: 10px 0 0 0;
+}
+
+.search-widget form {
+  background: var(--background-color);
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 75%);
+  padding: 3px 10px;
+  position: relative;
+  border-radius: 50px;
+  transition: 0.3s;
+}
+
+.search-widget form input[type=text] {
+  border: 0;
+  padding: 4px 10px;
+  border-radius: 4px;
+  width: calc(100% - 40px);
+  background-color: var(--background-color);
+  color: var(--default-color);
+}
+
+.search-widget form input[type=text]:focus {
+  outline: none;
+}
+
+.search-widget form button {
+  background: none;
+  color: var(--default-color);
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  border: 0;
+  font-size: 16px;
+  padding: 0 16px;
+  transition: 0.3s;
+  line-height: 0;
+}
+
+.search-widget form button i {
+  line-height: 0;
+}
+
+.search-widget form button:hover {
+  color: var(--accent-color);
+}
+
+.search-widget form:is(:focus-within) {
+  border-color: var(--accent-color);
+}
+
+.recent-posts-widget .post-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.recent-posts-widget .post-item:last-child {
+  margin-bottom: 0;
+}
+
+.recent-posts-widget .post-item h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.recent-posts-widget .post-item h4 a {
+  color: var(--default-color);
+  transition: 0.3s;
+}
+
+.recent-posts-widget .post-item h4 a:hover {
+  color: var(--accent-color);
+}
+
+.recent-posts-widget .post-item time {
+  display: block;
+  font-style: italic;
+  font-size: 14px;
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+}
+
+.tags-widget ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tags-widget ul li {
+  display: inline-block;
+}
+
+.tags-widget ul a {
+  background-color: color-mix(in srgb, var(--default-color), transparent 94%);
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  border-radius: 50px;
+  font-size: 14px;
+  padding: 5px 15px;
+  margin: 0 6px 8px 0;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.tags-widget ul a:hover {
+  background: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+.tags-widget ul a span {
+  padding-left: 5px;
+  color: color-mix(in srgb, var(--default-color), transparent 60%);
+  font-size: 14px;
+}
+
+/*--------------------------------------------------------------
+# Toast container
+--------------------------------------------------------------*/
+
+/* 토스트 메시지 기본 스타일 */
+#toast-container {
+    position: fixed;
+    bottom: 50%;         /* 화면 중앙(세로) */
+    left: 50%;           /* 화면 중앙(가로) */
+    transform: translate(-50%, 50%); /* 정확한 중앙 정렬 */
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    z-index: 9999;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+/* 토스트가 보일 때 클래스 */
+#toast-container.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 모바일 대응: 폰트 사이즈 살짝 조절 */
+@media (max-width: 768px) {
+    #toast-container {
+        font-size: 13px;
+        padding: 10px 20px;
+        bottom: 20%; /* 모바일은 손가락 위치 고려해 약간 하단이 편할 수 있음 (선택사항) */
+    }
+}

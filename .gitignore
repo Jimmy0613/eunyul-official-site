@@ -1,0 +1,10 @@
+# 템플릿 원본 소스 제외
+templates/
+
+# 운영체제 및 툴 관련 파일
+.DS_Store
+Thumbs.db
+.idea/
+
+# 로그 및 임시 파일
+*.log
