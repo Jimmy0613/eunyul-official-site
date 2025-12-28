@@ -845,3 +845,40 @@ section,
   font-size: 15px;
   margin-bottom: 10px;
 }
+
+
+/*--------------------------------------------------------------
+# Toast container
+--------------------------------------------------------------*/
+/* 토스트 메시지 기본 스타일 */
+#toast-container {
+    position: fixed;
+    bottom: 50%;         /* 화면 중앙(세로) */
+    left: 50%;           /* 화면 중앙(가로) */
+    transform: translate(-50%, 50%); /* 정확한 중앙 정렬 */
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    z-index: 9999;
+    font-size: 14px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+/* 토스트가 보일 때 클래스 */
+#toast-container.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 모바일 대응: 폰트 사이즈 살짝 조절 */
+@media (max-width: 768px) {
+    #toast-container {
+        font-size: 13px;
+        padding: 10px 20px;
+        bottom: 20%; /* 모바일은 손가락 위치 고려해 약간 하단이 편할 수 있음 (선택사항) */
+    }
+}
