@@ -13,6 +13,9 @@ function copyText(target) {
         case 'address':
             targetMsg = '지번주소';
             break;
+        case 'zip-code':
+            targetMsg = '우편번호';
+            break;
 
     }
     
