@@ -134,6 +134,7 @@
     font-display: swap;
 }
 
+/* Fonts */
 :root {
   --default-font: "Pretendard",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --heading-font: "Paperozi",  sans-serif;
@@ -143,27 +144,27 @@
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root {
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #212529; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #2d465e; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #34bf49; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #151515; /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #ffc451; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
-  --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  --contrast-color: #312f2f; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #212529;  /* The default color of the main navmenu links */
-  --nav-hover-color: #34bf49; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-color: rgba(255, 255, 255, 0.905);  /* The default color of the main navmenu links */
+  --nav-hover-color: #ffc451; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #212529; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #34bf49; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-dropdown-hover-color: #ffc451; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
 
 .light-background {
-  --background-color: #f3f4f4;
+  --background-color: #f9f9f9;
   --surface-color: #ffffff;
 }
 
@@ -172,7 +173,7 @@
   --default-color: #ffffff;
   --heading-color: #ffffff;
   --surface-color: #252525;
-  --contrast-color: #ffffff;
+  --contrast-color: #2a2727;
 }
 
 /* Smooth scroll */
@@ -208,10 +209,6 @@ h5,
 h6 {
   color: var(--heading-color);
   font-family: var(--heading-font), sans-serif;
-}
-
-.btn {
-  --bs-btn-font-family: var(--heading-font);
 }
 
 /* PHP Email Form Messages
@@ -270,9 +267,12 @@ h6 {
 # Global Header
 --------------------------------------------------------------*/
 .header {
+  --background-color: rgba(0, 0, 0, 0.8);
+  --heading-color: #ffffff;
+  --contrast-color: #ffffff;
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 20px 0;
+  padding: 10px 0;
   transition: all 0.5s;
   z-index: 997;
 }
@@ -282,19 +282,69 @@ h6 {
 }
 
 .header .logo img {
-  max-height: 55px;
+  max-height: 36px;
   margin-right: 8px;
 }
 
 .header .logo h1 {
-  font-size: 30px;
+  font-size: 32px;
   margin: 0;
-  font-weight: 300;
+  font-weight: 700;
   color: var(--heading-color);
 }
 
+.header .logo span {
+  color: var(--accent-color);
+  font-size: 32px;
+}
+
+.header .btn-getstarted,
+.header .btn-getstarted:focus {
+  color: var(--contrast-color);
+  font-size: 14px;
+  padding: 8px 30px;
+  margin: 0 0 0 30px;
+  border-radius: 4px;
+  transition: 0.3s;
+  border: 2px solid var(--accent-color);
+}
+
+.header .btn-getstarted:hover,
+.header .btn-getstarted:focus:hover {
+  color: var(--default-color);
+  background: var(--accent-color);
+}
+
+@media (max-width: 1200px) {
+  .header .logo {
+    order: 1;
+  }
+
+  .header .btn-getstarted {
+    order: 2;
+    margin: 0 15px 0 0;
+    padding: 6px 15px;
+  }
+
+  .header .navmenu {
+    order: 3;
+  }
+}
+
 .scrolled .header {
-  box-shadow: 0px 0 18px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 18px rgba(0, 0, 0, 0.1);
+}
+
+/* Index Page Header
+------------------------------*/
+.index-page .header {
+  --background-color: rgba(0, 0, 0, 0);
+}
+
+/* Index Page Header on Scroll
+------------------------------*/
+.index-page.scrolled .header {
+  --background-color: rgba(0, 0, 0, 0.8);
 }
 
 /*--------------------------------------------------------------
@@ -323,7 +373,7 @@ h6 {
     color: var(--nav-color);
     padding: 18px 15px;
     font-size: 16px;
-    font-family: var(--nav-font);
+    font-family: var(--nav-font), sans-serif;
     font-weight: 400;
     display: flex;
     align-items: center;
@@ -361,9 +411,9 @@ h6 {
     top: 130%;
     opacity: 0;
     transition: 0.3s;
-    border-radius: 4px;
+    border-radius: 0;
     z-index: 99;
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
   }
 
   .navmenu .dropdown ul li {
@@ -384,7 +434,7 @@ h6 {
   .navmenu .dropdown ul a:hover,
   .navmenu .dropdown ul .active:hover,
   .navmenu .dropdown ul li:hover>a {
-    color: var(--nav-dropdown-hover-color);
+    background-color: var(--nav-dropdown-hover-color);
   }
 
   .navmenu .dropdown:hover>ul {
@@ -435,14 +485,14 @@ h6 {
     overflow-y: auto;
     transition: 0.3s;
     z-index: 9998;
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
   }
 
   .navmenu a,
   .navmenu a:focus {
-    color: var(--nav-color);
+    color: var(--nav-dropdown-color);
     padding: 10px 20px;
-    font-family: var(--nav-font);
+    font-family: var(--nav-font), sans-serif;
     font-size: 17px;
     font-weight: 500;
     display: flex;
@@ -464,25 +514,22 @@ h6 {
     justify-content: center;
     border-radius: 50%;
     transition: 0.3s;
-    background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
+    background-color: color-mix(in srgb, var(--accent-color), white 90%);
   }
 
   .navmenu a i:hover,
   .navmenu a:focus i:hover {
-    background-color: var(--accent-color);
-    color: var(--contrast-color);
+    background-color: color-mix(in srgb, var(--accent-color), white 90%);
   }
 
   .navmenu a:hover,
   .navmenu .active,
   .navmenu .active:focus {
-    color: var(--nav-hover-color);
+    background-color: var(--nav-dropdown-hover-color);
   }
 
   .navmenu .active i,
   .navmenu .active:focus i {
-    background-color: var(--accent-color);
-    color: var(--contrast-color);
     transform: rotate(180deg);
   }
 
@@ -500,16 +547,6 @@ h6 {
 
   .navmenu .dropdown ul ul {
     background-color: rgba(33, 37, 41, 0.1);
-  }
-
-  .navmenu .dropdown ul a {
-    color: var(--nav-dropdown-color);
-  }
-
-  .navmenu .dropdown ul a:hover,
-  .navmenu .dropdown ul .active:hover,
-  .navmenu .dropdown ul li:hover>a {
-    color: var(--nav-dropdown-hover-color);
   }
 
   .navmenu .dropdown>.dropdown-active {
@@ -548,148 +585,161 @@ h6 {
 # Global Footer
 --------------------------------------------------------------*/
 .footer {
-  background-color: var(--background-color);
   color: var(--default-color);
-  padding: 60px 0;
+  background-color: var(--background-color);
   font-size: 14px;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
+  position: relative;
 }
 
-.footer a {
-  color: var(--default-color) !important;
+.footer .footer-top {
+  padding: 50px 0;
+  background-color: color-mix(in srgb, var(--background-color) 90%, white 10%);
 }
 
-.footer a:hover {
+.footer .footer-about .logo {
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.footer .footer-about .logo img {
+  max-height: 40px;
+  margin-right: 6px;
+}
+
+.footer .footer-about .logo span {
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  font-family: var(--heading-font), sans-serif;
+  color: var(--heading-color);
+}
+
+.footer .footer-about p {
+  font-size: 14px;
+  font-family: var(--heading-font), sans-serif;
+}
+
+.footer .social-links a {
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  background-color: color-mix(in srgb, var(--default-color) 5%, white 10%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-right: 10px;
+  transition: 0.3s;
+}
+
+.footer .social-links a:hover {
+  color: var(--contrast-color);
+  background-color: var(--accent-color);
+}
+
+.footer h4 {
+  font-size: 16px;
+  font-weight: bold;
+  position: relative;
+  padding-bottom: 12px;
+}
+
+.footer .footer-links {
+  margin-bottom: 30px;
+}
+
+.footer .footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer .footer-links ul i {
+  margin-right: 4px;
+  font-size: 12px;
+  line-height: 0;
   color: var(--accent-color);
 }
 
-.footer .copyright {
-  margin-top: 50px;
+.footer .footer-links ul li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.footer .footer-links ul li:first-child {
+  padding-top: 0;
+}
+
+.footer .footer-links ul a {
+  color: color-mix(in srgb, var(--default-color), transparent 30%);
+  display: inline-block;
+  line-height: 1;
+}
+
+.footer .footer-links ul a:hover {
+  color: var(--accent-color);
+}
+
+.footer .footer-contact p {
+  margin-bottom: 5px;
+}
+
+.footer .footer-newsletter .newsletter-form {
+  margin-top: 30px;
+  margin-bottom: 15px;
+  padding: 6px 8px;
   position: relative;
-  padding-top: 20px;
-  border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
+  border-radius: 4px;
+  border: 1px solid color-mix(in srgb, var(--default-color), transparent 80%);
+  display: flex;
+  background-color: color-mix(in srgb, var(--background-color) 90%, white 15%);
+  transition: 0.3s;
 }
 
-.footer .copyright p,
-.footer .copyright .credits {
-  margin: 2px 0;
-}
-
-.footer .btn-learn-more {
-  background-color: var(--accent-color);
-  border-radius: 30px;
-  padding: 8px 30px;
-  border: 2px solid transparent;
-  transition: 0.3s all ease-in-out;
-  font-size: 14px;
-  color: var(--contrast-color) !important;
-}
-
-.footer .btn-learn-more:hover {
+.footer .footer-newsletter .newsletter-form:focus-within {
   border-color: var(--accent-color);
-  background-color: transparent;
-  color: var(--accent-color) !important;
 }
 
-.footer .widget .widget-heading {
-  font-size: 15px;
-  color: var(--heading-color);
-  margin-bottom: 20px;
+.footer .footer-newsletter .newsletter-form input[type=email] {
+  border: 0;
+  padding: 4px;
+  width: 100%;
+  background-color: color-mix(in srgb, var(--background-color) 90%, white 15%);
+  color: var(--default-color);
 }
 
-.footer .widget ul li {
-  margin-bottom: 10px;
-  line-height: 1.5;
+.footer .footer-newsletter .newsletter-form input[type=email]:focus-visible {
+  outline: none;
 }
 
-.footer .widget ul li a {
-  color: color-mix(in srgb, var(--heading-color), transparent 50%);
-}
-
-.footer .widget ul li a:hover {
-  text-decoration: none;
-  color: var(--heading-color);
-}
-
-.footer .widget .footer-blog-entry .date {
-  color: color-mix(in srgb, var(--default-color), transparent 50%);
-  font-size: 12px;
-}
-
-.footer .social-icons li {
-  display: inline-block;
-}
-
-.footer .social-icons li a {
-  display: inline-block;
-  width: 40px;
-  height: 40px;
-  position: relative;
-  border-radius: 50%;
-  background: color-mix(in srgb, var(--default-color), transparent 90%);
-}
-
-.footer .social-icons li a span {
-  color: color-mix(in srgb, var(--heading-color), transparent 0%);
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transition: 0.3s all ease-in-out;
-}
-
-.footer .social-icons li a:hover {
+.footer .footer-newsletter .newsletter-form input[type=submit] {
+  border: 0;
+  font-size: 16px;
+  padding: 0 20px;
+  margin: -7px -8px -7px 0;
   background: var(--accent-color);
-}
-
-.footer .social-icons li a:hover span {
   color: var(--contrast-color);
+  transition: 0.3s;
+  border-radius: 0 4px 4px 0;
 }
 
-.footer .social-icons li:first-child a {
-  padding-left: 0;
+.footer .footer-newsletter .newsletter-form input[type=submit]:hover {
+  background: color-mix(in srgb, var(--accent-color), transparent 20%);
 }
 
-.footer .footer-subscribe form {
-  position: relative;
+.footer .copyright {
+  padding: 30px 0;
 }
 
-.footer .footer-subscribe .form-control {
-  font-size: 14px;
-  height: 42px;
-  border: 2px solid color-mix(in srgb, var(--default-color), transparent 40%);
-  background: none;
-  color: var(--heading-color);
-  padding-right: 40px;
+.footer .copyright p {
+  margin-bottom: 0;
 }
 
-.footer .footer-subscribe .form-control:focus {
-  border-color: color-mix(in srgb, var(--default-color), transparent 10%);
-  box-shadow: none;
-}
-
-.footer .footer-subscribe .form-control::placeholder {
-  color: color-mix(in srgb, var(--heading-color), transparent 60%);
-}
-
-.footer .footer-subscribe .btn-link {
-  padding: 0;
-  margin: 0;
-  font-size: 1.5rem;
-  background-color: none;
-  border-color: none;
-  position: absolute;
-  line-height: 0;
-  color: color-mix(in srgb, var(--heading-color), transparent 20%);
-  top: 20px;
-  right: 10px;
-  transform: translateY(-50%) rotate(0deg);
-}
-
-.footer .footer-subscribe .btn-link:hover,
-.footer .footer-subscribe .btn-link:focus,
-.footer .footer-subscribe .btn-link:active {
-  text-decoration: none;
+.footer .credits {
+  margin-top: 5px;
+  font-size: 10px;
 }
 
 /*--------------------------------------------------------------
@@ -700,7 +750,7 @@ h6 {
   inset: 0;
   z-index: 999999;
   overflow: hidden;
-  background: var(--background-color);
+  background: #000;
   transition: all 0.6s ease-out;
 }
 
@@ -765,7 +815,7 @@ h6 {
 --------------------------------------------------------------*/
 @media screen and (max-width: 768px) {
   [data-aos-delay] {
-    transition-delay: 0 !important;
+    transition-delay: 0s !important;
   }
 }
 
@@ -773,15 +823,22 @@ h6 {
 # Global Page Titles & Breadcrumbs
 --------------------------------------------------------------*/
 .page-title {
+  margin-top: 80px;
   color: var(--default-color);
   background-color: var(--background-color);
   padding: 20px 0;
   position: relative;
 }
 
+@media screen and (max-width: 768px) {
+  .page-title {
+    margin-top: 50px;
+  }
+}
+
 .page-title h1 {
   font-size: 24px;
-  font-weight: 300;
+  font-weight: 500;
   margin: 0 0 5px 0;
 }
 
@@ -792,7 +849,7 @@ h6 {
   padding: 0;
   margin: 0;
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .page-title .breadcrumbs ol li+li {
@@ -805,7 +862,6 @@ h6 {
   padding-right: 10px;
   color: color-mix(in srgb, var(--default-color), transparent 70%);
 }
-
 /*--------------------------------------------------------------
 # Global Sections
 --------------------------------------------------------------*/
@@ -814,7 +870,7 @@ section,
   color: var(--default-color);
   background-color: var(--background-color);
   padding: 60px 0;
-  scroll-margin-top: 100px;
+  scroll-margin-top: 80px;
   overflow: clip;
 }
 
@@ -822,7 +878,7 @@ section,
 
   section,
   .section {
-    scroll-margin-top: 66px;
+    scroll-margin-top: 58px;
   }
 }
 
@@ -830,20 +886,37 @@ section,
 # Global Section Titles
 --------------------------------------------------------------*/
 .section-title {
-  text-align: center;
   padding-bottom: 60px;
   position: relative;
 }
 
 .section-title h2 {
-  font-size: 22px;
+  font-size: 14px;
   font-weight: 500;
-  margin-bottom: 0;
+  padding: 0;
+  line-height: 1px;
+  margin: 0;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--default-color), transparent 50%);
+  position: relative;
+}
+
+.section-title h2::after {
+  content: "";
+  width: 120px;
+  height: 1px;
+  display: inline-block;
+  background: var(--accent-color);
+  margin: 4px 10px;
 }
 
 .section-title p {
-  font-size: 15px;
-  margin-bottom: 10px;
+  color: var(--heading-color);
+  margin: 0;
+  font-size: 36px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
 
 

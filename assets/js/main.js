@@ -1,7 +1,7 @@
 /**
-* Template Name: Active
-* Template URL: https://bootstrapmade.com/active-bootstrap-website-template/
-* Updated: Aug 07 2024 with Bootstrap v5.3.3
+* Template Name: Gp
+* Template URL: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/
+* Updated: Aug 15 2024 with Bootstrap v5.3.3
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
@@ -32,7 +32,9 @@
     mobileNavToggleBtn.classList.toggle('bi-list');
     mobileNavToggleBtn.classList.toggle('bi-x');
   }
-  mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
+  if (mobileNavToggleBtn) {
+    mobileNavToggleBtn.addEventListener('click', mobileNavToogle);
+  }
 
   /**
    * Hide mobile nav on same-page/hash links
@@ -122,63 +124,6 @@
   window.addEventListener("load", initSwiper);
 
   /**
-   * Initiate Pure Counter
-   */
-  new PureCounter();
-
-  /**
-   * Init swiper tabs sliders
-   */
-  function initSwiperTabs() {
-    document
-      .querySelectorAll(".init-swiper-tabs")
-      .forEach(function(swiperElement) {
-        let config = JSON.parse(
-          swiperElement.querySelector(".swiper-config").innerHTML.trim()
-        );
-
-        const dotsContainer = swiperElement
-          .closest("section")
-          .querySelector(".js-custom-dots");
-        if (!dotsContainer) return;
-
-        const customDots = dotsContainer.querySelectorAll("a");
-
-        // Remove the default pagination setting
-        delete config.pagination;
-
-        const swiperInstance = new Swiper(swiperElement, config);
-
-        swiperInstance.on("slideChange", function() {
-          updateSwiperTabsPagination(swiperInstance, customDots);
-        });
-
-        customDots.forEach((dot, index) => {
-          dot.addEventListener("click", function(e) {
-            e.preventDefault();
-            swiperInstance.slideToLoop(index);
-            updateSwiperTabsPagination(swiperInstance, customDots);
-          });
-        });
-
-        updateSwiperTabsPagination(swiperInstance, customDots);
-      });
-  }
-
-  function updateSwiperTabsPagination(swiperInstance, customDots) {
-    const activeIndex = swiperInstance.realIndex;
-    customDots.forEach((dot, index) => {
-      if (index === activeIndex) {
-        dot.classList.add("active");
-      } else {
-        dot.classList.remove("active");
-      }
-    });
-  }
-
-  window.addEventListener("load", initSwiperTabs);
-
-  /**
    * Initiate glightbox
    */
   const glightbox = GLightbox({
@@ -217,5 +162,50 @@
     });
 
   });
+
+  /**
+   * Initiate Pure Counter
+   */
+  new PureCounter();
+
+  /**
+   * Correct scrolling position upon page load for URLs containing hash links.
+   */
+  window.addEventListener('load', function(e) {
+    if (window.location.hash) {
+      if (document.querySelector(window.location.hash)) {
+        setTimeout(() => {
+          let section = document.querySelector(window.location.hash);
+          let scrollMarginTop = getComputedStyle(section).scrollMarginTop;
+          window.scrollTo({
+            top: section.offsetTop - parseInt(scrollMarginTop),
+            behavior: 'smooth'
+          });
+        }, 100);
+      }
+    }
+  });
+
+  /**
+   * Navmenu Scrollspy
+   */
+  let navmenulinks = document.querySelectorAll('.navmenu a');
+
+  function navmenuScrollspy() {
+    navmenulinks.forEach(navmenulink => {
+      if (!navmenulink.hash) return;
+      let section = document.querySelector(navmenulink.hash);
+      if (!section) return;
+      let position = window.scrollY + 200;
+      if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
+        document.querySelectorAll('.navmenu a.active').forEach(link => link.classList.remove('active'));
+        navmenulink.classList.add('active');
+      } else {
+        navmenulink.classList.remove('active');
+      }
+    })
+  }
+  window.addEventListener('load', navmenuScrollspy);
+  document.addEventListener('scroll', navmenuScrollspy);
 
 })();

@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Home - 공동법률사무소 은율</title>
-  <meta name="description" content="Home">
-  <meta name="keywords" content="Home">
+  <title>구성원 소개 - 공동법률사무소 은율</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
 
   <!-- Favicons -->
   <link href="assets/img/icon/favicon.png" rel="icon">
@@ -15,7 +15,7 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -26,18 +26,18 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/common.css" rel="stylesheet">
-  <link href="assets/css/main.css" rel="stylesheet">
+  <link href="assets/css/team.css" rel="stylesheet">
 
   <!-- =======================================================
-  * Template Name: Gp
-  * Template URL: https://bootstrapmade.com/gp-free-multipurpose-html-bootstrap-template/
-  * Updated: Aug 15 2024 with Bootstrap v5.3.3
+  * Template Name: Active
+  * Template URL: https://bootstrapmade.com/active-bootstrap-website-template/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 </head>
 
-<body class="index-page">
+<body class="about-page">
 
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
@@ -86,59 +86,61 @@
 
   <main class="main">
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background">
+    <!-- Page Title -->
+    <div class="page-title light-background">
+      <div class="container">
+        <h1>은율 소개</h1>
+        <nav class="breadcrumbs">
+          <ol>
+            <li><a href="index.html">Home</a></li>
+            <li class="current">구성원 소개</li>
+          </ol>
+        </nav>
+      </div>
+    </div><!-- End Page Title -->
 
-      <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in">
+    <!-- Team Section -->
+    <section id="team" class="team section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Team</h2>
+        <p>our Team</p>
+      </div><!-- End Section Title -->
 
       <div class="container">
 
-        <div class="row justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
-          <div class="col-xl-9 col-lg-8">
-            <h2><span>"</span>과정에서 신뢰를<span>,</span> 결과에서 만족을<span>"</span></h2>
-            <p>우리는 의뢰인과 함께 걷는 과정을 소중히 여깁니다.<br/>
-              사건을 준비하고 해결해 나가는 모든 과정에서 충분히 소통하고 신뢰를 쌓습니다.<br/>
-              결과 또한 반드시 만족스러워야 한다는 믿음으로, 은율은 언제나 마지막까지 책임을 다합니다.<br/>
-              과정에서 안심을, 결과에서 확신을 드리는 것. <br/>그것이 은율의 철학입니다.</p>
-          </div>
-        </div>
+        <div class="row justify-content-center gy-4">
 
-        <div class="row gy-4 mt-5 justify-content-center" data-aos="fade-up" data-aos-delay="200">
-          <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="300">
-            <div class="icon-box">
-              <i class="bi bi-people"></i>
-              <h3><a href="about-team.html">구성원 소개</a></h3>
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="team-member" onclick="location.href='about-team-1.html';">
+              <div class="member-img">
+                <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
+              </div>
+              <div class="member-info text-center">
+                <span>대표변호사</span>
+                <h4>최은진</h4>
+              </div>
             </div>
-          </div>
-          <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="400">
-            <div class="icon-box">
-              <i class="bi bi-file-earmark-text"></i>
-              <h3><a href="">의료</a></h3>
+          </div><!-- End Team Member -->
+
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+            <div class="team-member" onclick="location.href='about-team-2.html'">
+              <div class="member-img">
+                <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
+              </div>
+              <div class="member-info text-center">
+                <span>대표변호사</span>
+                <h4>송유리</h4>
+              </div>
             </div>
-          </div>
-          <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="500">
-            <div class="icon-box">
-              <i class="bi bi-hospital"></i>
-              <h3><a href="">학교폭력</a></h3>
-            </div>
-          </div>
-          <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="600">
-            <div class="icon-box">
-              <i class="bi bi-map"></i>
-              <h3><a href="">오시는 길</a></h3>
-            </div>
-          </div>
-          <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="700">
-            <div class="icon-box">
-              <i class="bi bi-calendar-check"></i>
-              <h3><a href="">상담예약</a></h3>
-            </div>
-          </div>
+          </div><!-- End Team Member -->
+
         </div>
 
       </div>
 
-    </section><!-- /Hero Section -->
+    </section><!-- /Team Section -->
 
   </main>
 
