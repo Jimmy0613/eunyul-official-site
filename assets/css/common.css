@@ -282,8 +282,7 @@ h6 {
 }
 
 .header .logo img {
-  max-height: 36px;
-  margin-right: 8px;
+  width: 200px;
 }
 
 .header .logo h1 {
@@ -954,4 +953,8 @@ section,
         padding: 10px 20px;
         bottom: 20%; /* 모바일은 손가락 위치 고려해 약간 하단이 편할 수 있음 (선택사항) */
     }
+}
+
+.root_daum_roughmap.root_daum_roughmap_landing .cont {
+  display: none!important;
 }
